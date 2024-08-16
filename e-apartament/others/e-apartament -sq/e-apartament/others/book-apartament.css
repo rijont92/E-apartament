@@ -1,0 +1,681 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* header */
+header {
+    position: absolute;
+    top: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.albania img{
+  width: 30px;
+  margin-top: 10px;
+}
+  
+.content{
+    max-width: 1300px;
+    width: 90%;
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+    padding: 20px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.194);
+    background-color: white;
+  }
+
+  .navbar .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar .logo img{
+    width: 170px;
+  }
+
+  .navbar .menu-list{
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .menu-list li{
+    list-style: none;
+  }
+  
+  .menu-list li a{
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .menu-list li a:hover:not(.nav-button), .menu-list li a.active{
+    color: #43ba7f;
+  }
+
+  a.nav-button {
+    padding: 10px 20px;
+    background-color: #43ba7f;
+    border-radius: 14px;
+    color: white !important;
+  }
+
+  a.nav-button:hover {
+    background-color: #1a6e44;
+  }
+
+  .icon{
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .menu-list .cancel-btn{
+    position: absolute;
+    right: 30px;
+    top: 20px;
+  }
+
+  .menu-btn {
+    color: black;
+  }
+
+/* end of header */
+
+
+.container {
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* booking */
+
+.book-container {
+    margin-top: 220px;
+}
+
+.sold {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 2;
+}
+
+.sold-img {
+  position: relative !important;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(236, 236, 236, .8); 
+  z-index: 1; /* Ensure overlay is above the image */
+}
+
+.ferizaj-icon, .ferizaj-title, .ferizaj-location, .ferizaj-price {
+text-decoration: line-through;
+}
+
+.ferizaj-button{
+  background-color: rgba(236, 236, 236, .8) !important;
+  color: black !important;
+  text-decoration: line-through !important;
+  box-shadow: none !important;
+}
+
+.book-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-title h2 {
+    font-size: 2.3rem;
+    font-weight: 500;
+    color: #43ba7f;
+}
+
+.book-select select {
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: .9rem;
+}
+
+/* book product */
+
+.book-row {
+    margin-top: 70px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+}
+
+.book-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .4s;
+}
+
+
+.book-img {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    overflow: hidden;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+}
+
+.book-img:hover:not(.sold-img) img {
+    transform: scale(1.2);
+    transform-origin: center center; 
+    transition: transform 0.3s ease;
+    
+}
+
+.circle-like {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    background-color: white;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-like i {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+
+.icon-text i {
+    font-size: 18px;
+    color: #1a6e44;
+}
+
+.icon-text {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon-content {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.icon-text h4 {
+    color: #6b6b6b;
+    font-weight: 400;
+}
+
+.book-content h3 {
+    font-size: 1.4rem;
+    color: #43ba7f;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.location-p {
+    color: #6b6b6b;
+    font-weight: 300;
+    font-size: .9rem;
+}
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(74, 63, 53, .3);
+    margin: 10px 0;
+}
+
+.price p span{
+    color: #43ba7f;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.price p {
+    color: #6b6b6b;
+    font-weight: 400;
+}
+
+.book-col {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.book-content {
+    background-color: white;
+    box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.1);
+    padding: 30px 20px;
+    border-bottom-left-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+
+/* css button */
+.circle-like {
+    position: absolute;
+    top: 4%;
+    right: 4%;
+    background-color: white;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.share-rooms {
+  position: absolute;
+    top: 4%;
+    left: 4%;
+    background-color: white;
+    border-radius: 20px;
+    height: 40px;
+    width: 52%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: #43ba7f;
+}
+
+.share-rooms i {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Hide the checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Change color when checkbox is checked */
+input[type="checkbox"]:checked + .circle-like i {
+    color: #43ba7f;
+}
+
+/* share room */
+input[type="checkbox"]:checked + .share-rooms {
+  background-color: #43ba7f;
+  color: white;
+}
+
+.price-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button a{
+    color: white;
+  padding: 10px 20px;
+  background-color: #43ba7f;
+  font-weight:600;
+  transition: .4s;
+  border-radius: 8px;
+  font-size: 14px;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.button a:hover {
+    box-shadow: 5px 9px 15px -4px rgba(67, 186, 127, 0.75);
+}
+
+/* footer */
+
+.line-f {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 30px 0 10px;
+}
+
+.reserved {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+}
+
+.reserved a {
+  color: #43ba7f;
+  text-decoration: none;
+}
+
+footer{
+  padding: 200px 0px 0px;
+  background-color: black;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 200px;
+}
+
+.footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+}
+
+footer ul{
+  list-style: none;
+}
+
+.footer-col{
+  width: 25%;
+}
+
+.footer-col a i{
+  background-color: none;
+  font-size: 20px;
+}
+
+.footer-col h4{
+  position: relative;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 22px;
+  color: #43ba7f;
+  text-transform: capitalize;
+  font-weight: 900;
+}
+
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  background-color: #1a6e44;
+  height: 2px;
+  width: 40px;
+}
+
+footer ul li:not(:last-child){
+  margin-bottom: 8px;
+}
+
+footer ul li a{
+  font-size: 19px;
+  text-transform: capitalize;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: 0.4s;
+}
+
+footer ul li{
+  display: block;
+  margin: 25px 0px;
+}
+
+footer ul li a:hover{
+  color: #43ba7f;
+  padding-left: 2px;
+}
+
+.links a{
+  display: inline-flex;
+  height: 49px;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 49px;
+  color: #fff;
+  background-color: transparent;
+  margin: 0 8px 8px 0;
+  text-align: center;
+  line-height: 44px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.links a:hover{
+  color: #43ba7f;
+  background-color: white;
+}
+
+footer .wave {
+  position: absolute;
+  top: 0px;
+  rotate: 180deg;
+  padding-bottom: 100px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url(images/wave.png);
+  background-size: 1000px 100px;
+}
+
+footer .wave.wave1 {
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom: 0;
+}
+
+footer .wave.wave2 {
+  animation: animate2 30s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom: 10px;
+}
+
+footer .wave.wave3 {
+  animation: animate 30s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom: 15px;
+}
+
+footer .wave.wave4 {
+  animation: animate2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.4;
+  animation-delay: -3s;
+  bottom: 20px;
+}
+
+@keyframes animate {
+  0% {
+      background-position-x: 0;
+  }
+
+  100% {
+      background-position-x: 1000px;
+  }
+}
+
+@keyframes animate2 {
+  0% {
+      background-position-x: 0;
+  }
+
+  100% {
+      background-position-x: 1000px;
+  }
+}
+
+@keyframes infinteupdown {
+  0% {
+    height: 45%;
+  }
+
+  50% {
+    height: 70%;
+  }
+
+  100% {
+    height: 45%;
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@media (max-width: 1200px){
+  .footer-col{
+      width: 50%;
+      margin-bottom: 30px;
+      text-align: center;
+  }
+
+  footer ul li a{
+      margin: 20px 0px;
+  }
+
+  .footer-col h4::before{
+      all: unset;
+  }
+}
+
+  
+  @media (max-width: 1000px) {
+    body.disabled{
+      overflow: hidden;
+    }
+
+    .icon{
+      display: block;
+    }
+    .icon.hide{
+      display: none;
+    }
+    .navbar .menu-list{
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      left: -100%;
+      top: 0px;
+      display: block;
+      padding: 40px 0;
+      text-align: center;
+      background: #222;
+      transition: all 0.3s ease;
+    }
+    .navbar.show .menu-list{
+      left: 0%;
+    }
+    .navbar .menu-list li{
+      margin-top: 45px;
+    }
+    .navbar .menu-list li a{
+      font-size: 23px;
+      margin-left: -100%;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    .navbar.show .menu-list li a{
+      margin-left: 0px;
+    }
+
+    .menu-list li a {
+      color: white;
+    }
+
+    .navbar{
+      padding: 15px 0;
+    }
+
+    .book-row {
+        grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 768px) {
+
+  .footer-col{
+    width: 100%;
+    margin: 20px 0px;
+}  
+
+.book-row {
+    grid-template-columns: 1fr;
+}
+
+
+.book-nav {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+}
+
+.book-select {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+}
+
+@media (max-width: 340px) {
+  .share-rooms {
+    width: 55%;
+  }
+}
+
+@media (max-width:576px) {
+  .reserved {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

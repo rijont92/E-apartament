@@ -1,0 +1,88 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.succses {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+
+}
+
+.image {
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+.checkmark {
+    animation: drawCheckmark 1s ease-in-out;
+}
+
+.text h2 {
+    color: #43ba7f;
+    font-weight: 500;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.text p {
+    color: #64748b;
+    font-size: 15px;
+}
+
+.button a {
+    text-decoration: none;
+    color: #6366f1;
+    transition: all 0.4s ease; /* Smooth transition for hover effect */
+}
+
+.button a:hover {
+    text-decoration: underline;
+    transform: scale(1.05); /* Scale button on hover */
+}
+
+.button {
+    margin-top: 30px;
+    animation: fadeInUp 1s forwards;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes drawCheckmark {
+    0% {
+        stroke-dasharray: 0, 100;
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dasharray: 100, 0;
+        stroke-dashoffset: 0;
+    }
+}

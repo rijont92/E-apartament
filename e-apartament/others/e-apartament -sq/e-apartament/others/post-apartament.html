@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posto Apartamente | E-Apartament</title>
+    <link rel="icon" type="images/x-icon" href="images/tab-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="post-apartament.css"> 
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="content">
+          <div class="logo">
+            <a href="home.html"><img src="images/e-apartament-logo.png" alt="E-apartament Logo"></a>
+          </div>
+          <ul class="menu-list">
+            <div class="icon cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li><a href="home.html">Ballina</a></li>
+            <li><a href="about.html">Rreth Nesh</a></li>
+            <li><a href="reviews.html">Komentet</a></li>
+            <li><a href="book-apartament.html">Rezervo Apartamente</a></li>
+            <li><a href="post-apartament.html" class="active">Posto Apartamente</a></li>
+            <li><a href="my-dashboard.html">Historia ime</a></li>
+            <li><a href="../index.html" class="nav-button">Ç'kyçu</a></li>
+            <li class="albania"><a href="../../../post-apartament.html"><img src="images/uk-flag.svg" alt="Uk flag"></a></li>
+          </ul>
+          <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+
+
+<section class="container">
+    <form action="">
+
+        <div class="row">
+
+    <div class="post-container">
+    <h2 class="title">Posto Pronen Tuaj</h2>
+
+  
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-circle-info"></i>
+                <h3>Informacionet bazë</h3>
+            </div>
+
+            <div class="info-input-container">
+                <div class="input">
+                    <label for="title">Titulli <span>*</span></label>
+                    <input type="text" name="title" id="title" placeholder="Shkruani titullin e pronës" required>
+                </div>
+
+                    <div class="input">
+                        <label for="type">Lloji i pronës <span>*</span></label>
+                        <select name="type" id="type" required>
+                            <option value="#">Apartament</option>
+                            <option value="#">Shtëpi</option>
+                            <option value="#">Luxury Retreat</option>
+                            <option value="#">Shtëpi në qytet</option>
+                        </select>
+                    </div>
+
+                    <div class="input">
+                        <p>A po postoni si pjesë e kompanisë?</p>
+
+                        <div class="input-row-radio">
+                            <input type="radio" name="bussines" id="bussines" checked>
+                            <label for="bussines">Unë jam biznes i regjistruar</label>
+                        </div>
+
+                        <div class="input-row-radio">
+                            <input type="radio" name="bussines" id="private">
+                            <label for="private">Jam shitës privat</label>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+
+        <!-- location -->
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Vendndodhja</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input-row">
+                    <div class="input">
+                        <label for="city">Qyteti <span>*</span></label>
+                        <input type="text" name="city" id="city" placeholder="Vendndodhja e pronës" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="district">Rajoni <span>*</span></label>
+                        <input type="text" name="district" id="district" placeholder="Rajoni i pronës" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input">
+                        <label for="zip">Kodi Postar <span>*</span></label>
+                        <input type="number" name="zip" id="zip" placeholder="Shkruani Kodin Postar" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="street">Adresa e Rrugës <span>*</span></label>
+                        <input type="text" name="street" id="street" placeholder="Shkruaj Adresën e Rrugës" required>
+                    </div>
+                </div>
+                
+
+                  
+
+                 
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+        <!-- property details -->
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+                <h3>Detajet e Prones</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input half-width-input">
+                    <label for="area">Sipërfaqja e përgjithshme, m<sup>2</sup> <span>*</span></label>
+                    <div class="input-suffix">
+                        <input type="number" name="area" id="area" placeholder="Shkruani sipërfaqen totale në m2" required>
+                    </div>
+                </div>
+                
+                <div class="input half-width-input">
+                    <h3 class="title-for-input-count-rooms">Dhoma të gjumit</h3>
+                    <div class="input-count-rooms-row">
+                        <input type="radio" name="bedrooms" id="bedrooms-1" value="-">
+                        <label for="bedrooms-1">-</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-2">
+                        <label for="bedrooms-2">1</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-3">
+                        <label for="bedrooms-3">2</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-4">
+                        <label for="bedrooms-4">3</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-5">
+                        <label for="bedrooms-5">4</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-6">
+                        <label for="bedrooms-6">5+</label>
+                    </div>
+                    
+
+                </div>
+
+                <!-- bathrooms -->
+
+                <div class="input half-width-input">
+                    <h3 class="title-for-input-count-rooms">Banjo</h3>
+                    <div class="input-count-rooms-row">
+                        <input type="radio" name="bathroom" id="bathroom-1" value="-">
+                        <label for="bathroom-1">-</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-2">
+                        <label for="bathroom-2">1</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-3">
+                        <label for="bathroom-3">2</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-4">
+                        <label for="bathroom-4">3</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-5">
+                        <label for="bathroom-5">4</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-6">
+                        <label for="bathroom-6">5+</label>
+                    </div>
+                    
+
+                </div>
+
+
+
+                <!-- parking -->
+                <div class="input half-width-input">
+                    <h3 class="title-for-input-count-rooms">Vend parkim</h3>
+                    <div class="input-count-rooms-row">
+                        <input type="radio" name="parking" id="parking-1">
+                        <label for="parking-1">-</label>
+                    
+                        <input type="radio" name="parking" id="parking-2">
+                        <label for="parking-2">1</label>
+                    
+                        <input type="radio" name="parking" id="parking-3">
+                        <label for="parking-3">2</label>
+                    
+                        <input type="radio" name="parking" id="parking-4">
+                        <label for="parking-4">3</label>
+                    
+                        <input type="radio" name="parking" id="parking-5">
+                        <label for="parking-5">4</label>
+                    
+                        <input type="radio" name="parking" id="parking-6">
+                        <label for="parking-6">5+</label>
+                    </div>
+                    
+
+                </div>
+
+
+
+                <!-- amenities -->
+                
+                <div class="checkbox-row">
+                    <div class="checkbox-col">
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="wifi1" checked>
+                            <label for="wifi1">WiFi</label>
+                        </div>  
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="air-conditioning2" checked>
+                            <label for="air-conditioning2">Kondicioner</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="balcony3">
+                            <label for="balcony3">Ballkon</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="garage4" checked>
+                            <label for="garage4">Garazh</label>
+                        </div>
+                
+                    </div>
+                
+                    <!-- second -->
+                  
+                
+                    <div class="checkbox-col">
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="gym5">
+                            <label for="gym5">Palester</label>
+                        </div>  
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="parking6" checked>
+                            <label for="parking6">Parking</label>
+                        </div>
+                
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="pool7">
+                            <label for="pool7">Pishinë</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="tv8" checked>
+                            <label for="tv8">TV</label>
+                        </div>
+                
+                    </div>
+                
+                    <!-- third -->
+                
+                    <div class="checkbox-col">
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="heating9">
+                            <label for="heating9">Ngrohëse</label>
+                        </div>  
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="dishwasher10">
+                            <label for="dishwasher10">Pjatalarëse</label>
+                        </div>
+                
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="kitchen11" checked>
+                            <label for="kitchen11">Kushinë</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="cameras12" checked>
+                            <label for="cameras12">Kamerat e sigurisë</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <label for="describe">Përshkrim <span>*</span></label>
+                    <textarea name="zip" id="describe" placeholder="Përshkruani pronën tuaj" required></textarea>
+                </div>
+                
+                  
+
+                 
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+        <!-- price -->
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-money-bills" aria-hidden="true"></i>
+                <h3>Çmimi</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input-row price">
+                    <div class="input first-price">
+                        <label for="city">Valuta <span>*</span></label>
+                        <select name="currency" id="currency" required>
+                            <option value="#">&euro;</option>
+                            <option value="#">&dollar;</option>
+                            <option value="#">&pound;</option>
+                        </select>
+                    </div>
+
+                    <div class="input second-price">
+                        <label for="price">Çmimi <span>*</span></label>
+                        <input type="number" name="price" id="price" placeholder="Çmimi" required>
+                    </div>
+
+                    <div class="input third-price">
+                        <label for="district">Kohëzgjatja <span>*</span></label>
+                        <select name="duration" id="duration">
+                            <option value="#">për ditë</option>
+                            <option value="#">për javë</option>
+                            <option value="#">për muajë</option>
+                            <option value="#">për vite</option>
+                        </select>
+                    </div>
+                </div>
+                 
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+
+        <!-- photos -->
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                <h3>Fotografitë</h3>
+            </div>
+        
+            <div class="upload-container">
+                <div class="upload-content">
+        
+                    <div class="upload-button">
+                        <input type="file" id="fileinput" multiple accept="image/*"> <!-- Allow multiple image upload -->
+                        <div class="upload-button-container">
+                            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                            <label for="fileinput">Ngarko Fotot</label>
+                        </div>
+                    </div>
+        
+                    <div class="upload-text">
+                        <p>Ngarko foto të pronës suaj</p>
+                    </div>
+        
+                </div>
+                <div id="thumbnails-container" class="thumbnails-container"></div> 
+            </div>
+        </div>
+
+
+
+        <!-- personal info  -->
+        
+        <div class="info-container ">
+            <div class="info-text personal-info-text">
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                <h3>Informacionet Personale</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input-row">
+                    <div class="input">
+                        <label for="first-nane">Emri <span>*</span></label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Shkruaj Emrin tënd" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="last-nane">Mbiemri <span>*</span></label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Shkruaj Mbiemrin tënd" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" name="email" id="email" placeholder="Shkruaj Emailin tënd" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="tel">Numri i Telefonit <span>*</span></label>
+                        <input type="tel" name="tel" id="tel" placeholder="Shkruaj Numrin e Telefonit" required>
+                    </div>
+                </div>
+                
+
+                
+                    <div class="line personal-info"></div>
+            </div>
+        </div>
+
+        <div class="input-submit">
+            <input type="submit" name="send" value="Posto Pronën tënde">
+        </div>
+
+     
+        
+
+
+
+
+            
+      
+
+        
+    </div>
+</form>
+
+<div class="ilustration">
+    <img src="images/list-apartament-ilustration.svg" alt="List apartament ilustration">
+</div>
+
+</div>
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+    <section class="container">
+      <div class="footer-row">
+  
+    <div class="footer-col">
+        <h4>Linkat direkt</h4>
+        <ul>
+            <li><a href="home.html">Ballina</a></li>
+            <li><a href="about.html">Rreth Nesh</a></li>
+            <li><a href="reviews.html">Komentet</a></li>
+            <li><a href="book-apartament.html">Rezervo Apartamente</a></li>
+            <li><a href="post-apartament.html">Posto Apartamente</a></li>
+        </ul>
+    </div>
+  
+    <div class="footer-col">
+        <h4>Shërbimet tona</h4>
+        <ul>
+            <li><a href="book-apartament.html">Ndaj-Dhomën</a></li>
+            <li><a href="post-apartament.html">Posto Apartamente</a></li>
+            <li><a href="all-locations.html">Shumëllojshmëria e Vendndodhjeve</a></li>
+            <li><a href="reviews.html">Komente dhe Vlerësime</a></li>
+            <li><a href="book-apartament.html">Gjeni & Rezervoni</a></li>
+        </ul>
+    </div>
+  
+    <div class="footer-col">
+        <h4>Info i Kontaktit</h4>
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-phone"></i> +383 49-841-813</a></li>
+            <li><a href="#"><i class="fa-solid fa-phone"></i> +383 49-820-970</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i> rijont92@gmail.com</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i> leardkalludra@gmail.com</a></li>
+            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Vushtrri, Kosovë</a></li>
+        </ul>
+    </div>
+  
+    <div class="footer-col">
+        <h4>Na ndiq</h4>
+     <div class="links">
+        <a href="# "><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+     </div>
+    </div>
+  </div>
+  
+  <div class="line-f"></div>
+  <div class="reserved">
+    <p>All rights reserved &copy; <span id="year">2024</span> E-apartament.</p>
+    <p> Developed by <a href="https://www.linkedin.com/in/rijon-tahiri-156169275/" target="_blank">Rijon</a> and <a href="https://www.linkedin.com/in/leard-kalludra-297209312/" target="_blank">Leard</a>.</p>
+  </div>
+    </section>
+  </footer> 
+  
+
+
+      <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+          navbar.classList.add("show");
+          menuBtn.classList.add("hide");
+          body.classList.add("disabled");
+        }
+        cancelBtn.onclick = ()=>{
+          body.classList.remove("disabled");
+          navbar.classList.remove("show");
+          menuBtn.classList.remove("hide");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// upload images
+
+
+
+document.getElementById('fileinput').addEventListener('change', handleFileSelect);
+
+function handleFileSelect(event) {
+    const files = event.target.files;
+    const thumbnailsContainer = document.getElementById('thumbnails-container');
+    
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            const thumbnailContainer = document.createElement('div');
+            thumbnailContainer.classList.add('thumbnail-container');
+            
+            const thumbnail = document.createElement('img');
+            thumbnail.src = event.target.result;
+            thumbnail.classList.add('thumbnail');
+            
+            const removeButton = document.createElement('button');
+            removeButton.innerHTML = 'Remove';
+            removeButton.classList.add('remove-button');
+            removeButton.addEventListener('click', function() {
+                thumbnailContainer.remove();
+            });
+            
+            thumbnailContainer.appendChild(thumbnail);
+            thumbnailContainer.appendChild(removeButton);
+            thumbnailsContainer.appendChild(thumbnailContainer);
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
+
+      </script>
+</body>
+</html>

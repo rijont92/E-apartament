@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="images/x-icon" href="others/images/tab-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="others/style.css" />
+  <title>Identifikohu | E-apartament</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="containerContent">
+      <a class="albania" href="../../../index.html"><img src="others/images/uk-flag.svg" alt="Uk flag"></a>
+      <h3> Mirë se vini përsëri!</h3>
+      <h1>Identifikohu</h1>
+      <form id="loginForm" action="others/home.html">
+        <label for="email">Email <span>*</span></label>
+        <div class="inputRow" id="email-input">
+          <input type="email" id="email" placeholder="Shkruani emailin tuaj"/>
+        </div>
+        <div class="error-msg">
+          <p id="error-message-email"></p>
+        </div>
+        <label for="password">Fjalëkalimi <span>*</span></label>
+        <div class="inputRow" id="password-input">
+          <input type="password" id="password" placeholder="Shkruani fjalëkalimin tuaj"/>
+          <div class="icon">
+            <i class="fa-solid fa-eye-slash" id="icon"></i>
+          </div>
+        </div>
+        <div class="error-msg">
+          <p id="error-message-password"></p>
+        </div>
+        <div class="inputFP">
+          <div class="remember">
+            <input type="checkbox" name="remember-me" id="remember-me">
+            <label for="remember-me">Më mbaj në mend?</label>
+          </div>
+          <div class="forgot-password">
+            <a href="others/forgot-password.html">Keni harruar fjalëkalimin?</a>
+          </div>
+        </div>
+        <button type="submit">Kyçu</button>
+      </form>
+      <div class="or-option">Ose regjistrohu me</div>
+      <div class="logins">
+        <a href="#"><img src="others/images/search.png" alt="google" /></a>
+        <a href="#"><img src="others/images/facebook.png" alt="facebook" /></a>
+      </div>
+      <p>Nuk keni ende një llogari?  <a href="others/sign-up.html">Regjistrohu</a></p>
+    </div>
+    <div class="containerImg">
+      <img src="others/images/3d-model-apartament.png" alt="header" />
+    </div>
+  </div>
+
+  <script>
+    const icon = document.getElementById("icon");
+const password = document.getElementById("password");
+const email = document.getElementById("email");
+const form = document.getElementById("loginForm");
+const errorInputEmail = document.getElementById("email-input");
+const errorInputPassword = document.getElementById("password-input");
+const errorMessageEmail = document.getElementById("error-message-email");
+const errorMessagePassword = document.getElementById("error-message-password");
+
+icon.onclick = function() {
+  if (password.type === "password") {
+    password.type = "text";
+    icon.classList.replace('fa-eye-slash', 'fa-eye');
+  } else {
+    password.type = "password";
+    icon.classList.replace('fa-eye', 'fa-eye-slash');
+  }
+};
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const isEmailValid = validateEmail(email.value);
+  const isPasswordValid = validatePassword();
+
+  if (isEmailValid && isPasswordValid) {
+    // Submit the form if both email and password are valid
+    form.submit();
+  }
+});
+
+password.addEventListener('input', function() {
+  if (password.value.length > 30) {
+    password.value = password.value.slice(0, 30);
+  }
+});
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  
+  if (email === "") {
+    errorMessageEmail.innerHTML = "Email cannot be blank";
+    errorInputEmail.classList.add("error-input");
+    errorInputEmail.classList.remove("sucsses-input");
+    return false;
+  } 
+  
+  const isValid = re.test(String(email).toLowerCase());
+
+  if (isValid) {
+    errorInputEmail.classList.remove("error-input");
+    errorInputEmail.classList.add("sucsses-input");
+    errorMessageEmail.innerHTML = "";
+  } else {
+    errorMessageEmail.innerHTML = "Invalid email address";
+    errorInputEmail.classList.add("error-input");
+    errorInputEmail.classList.remove("sucsses-input");
+  }
+
+  return isValid;
+}
+
+function validatePassword() {
+  const isValid = password.value.length >= 8 && password.value.length <= 30;
+
+  if (password.value === "") {
+    errorMessagePassword.innerHTML = "Password cannot be blank";
+    errorInputPassword.classList.add("error-input");
+    errorInputPassword.classList.remove("sucsses-input");
+    return false;
+  } else if (isValid) {
+    errorMessagePassword.innerHTML = "";
+    errorInputPassword.classList.add("sucsses-input");
+    errorInputPassword.classList.remove("error-input");
+  } else if (password.value.length < 8) {
+    errorMessagePassword.innerHTML = "The password must have at least 8 characters";
+    errorInputPassword.classList.add("error-input");
+    errorInputPassword.classList.remove("sucsses-input");
+  } else if (password.value.length >= 30) {
+    errorMessagePassword.innerHTML = "The password cannot have more than 30 characters";
+    errorInputPassword.classList.add("error-input");
+    errorInputPassword.classList.remove("sucsses-input");
+  }
+
+  return isValid;
+}
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="images/x-icon" href="../img/tab-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Compose - Admin</title>
+    <link rel="stylesheet" href="compose.css" />
+    <!-- Boxicons CSS -->
+    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="sidebar hoverable">
+      <div class="logo_items flex">
+        <span class="nav_image">
+          <img src="../img/user-image.svg" alt="logo_img" />
+        </span>
+        <span class="logo_name">Rijon Tahiri</span>
+        <i class="bx bx-lock-open-alt" id="lock-icon" title="Unlock Sidebar"></i>
+        <i class="bx bx-x" id="sidebar-close"></i>
+      </div>
+
+      <div class="menu_container">
+        <div class="menu_items">
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Dashboard</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="../admin.html" class="link flex">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="orders.html" class="link flex">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Orders</span>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="all-agents.html" class="link flex">
+                <i class="fa-solid fa-users"></i>
+                <span>All agents</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Clients</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="messages.html" class="link flex active">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="properties.html" class="link flex">
+                <i class="fa-solid fa-building-user"></i>
+                <span>Property</span>
+              </a>
+            </li>
+       
+          </ul>
+
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Settings</span>
+              <span class="line"></span>
+            </div>
+            
+            <li class="item">
+              <a href="../../index.html" class="link flex">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sign out</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="settings.html" class="link flex">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar_profile flex">
+          <span class="nav_image">
+            <img src="../img/user-image.svg" alt="logo_img" />
+          </span>
+          <div class="data_text">
+            <span class="name">Rijon Tahiri</span>
+            <span class="email">rijont92@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar flex">
+      <i class="bx bx-menu" id="sidebar-open"></i>
+      <input type="text" placeholder="Search..." class="search_box" />
+      <span class="nav_image">
+        <img src="../img/user-image.svg" alt="logo_img" />
+      </span>
+    </nav>
+
+    <!-- orders -->
+
+    <div class="header_fixed">
+
+    <div class="input-container">
+
+        <div class="input">
+            <label for="to">To:</label>
+            <input type="email" placeholder="To:" required id="to">
+        </div>
+
+        <div class="input">
+            <label for="subject">Subject</label>
+            <input type="text" placeholder="Subject" required id="subject">
+        </div>
+
+        <div class="message">
+            <label for="message">Message</label>
+            <textarea placeholder="Enter Message" required id="message"></textarea>
+        </div>
+
+
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-file"></i>
+                <h3>Files</h3>
+            </div>
+        
+            <div class="upload-container">
+                <div class="upload-content">
+        
+                    <div class="upload-button">
+                        <input type="file" id="fileinput" multiple accept="file/*img/*"> 
+                        <div class="upload-button-container">
+                            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                            <label for="fileinput">Upload File</label>
+                        </div>
+                    </div>
+        
+                    <div class="upload-text">
+                        <p>Upload any file</p>
+                    </div>
+
+                    
+                  </div>
+                  <div id="thumbnails-container" class="thumbnails-container"></div> 
+                </div>
+              </div>
+              <div class="line-input"></div>
+
+              <div class="input-submit">
+                <input type="submit" name="send" value="Send">
+            </div>
+              
+
+    </div>
+    
+    </div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        document.getElementById('fileinput').addEventListener('change', handleFileSelect);
+    
+    function handleFileSelect(event) {
+        const files = event.target.files;
+        const thumbnailsContainer = document.getElementById('thumbnails-container');
+        
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+            const reader = new FileReader();
+    
+            reader.onload = function (event) {
+                const thumbnailContainer = document.createElement('div');
+                thumbnailContainer.classList.add('thumbnail-container');
+                
+                const thumbnail = document.createElement('img');
+                thumbnail.src = event.target.result;
+                thumbnail.classList.add('thumbnail');
+                
+                const removeButton = document.createElement('button');
+                removeButton.innerHTML = 'Remove';
+                removeButton.classList.add('remove-button');
+                removeButton.addEventListener('click', function() {
+                    thumbnailContainer.remove();
+                });
+                
+                thumbnailContainer.appendChild(thumbnail);
+                thumbnailContainer.appendChild(removeButton);
+                thumbnailsContainer.appendChild(thumbnailContainer);
+            };
+    
+            reader.readAsDataURL(file);
+        }
+    }
+       </script>
+
+   <script src="../main.js"></script>
+  </body>
+</html>

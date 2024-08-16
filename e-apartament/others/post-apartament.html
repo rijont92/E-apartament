@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Apartament | E-Apartament</title>
+    <link rel="icon" type="images/x-icon" href="images/tab-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="post-apartament.css"> 
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="content">
+          <div class="logo">
+            <a href="home.html"><img src="images/e-apartament-logo.png" alt="E-apartament Logo"></a>
+          </div>
+          <ul class="menu-list">
+            <div class="icon cancel-btn">
+              <i class="fas fa-times"></i>
+            </div>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="book-apartament.html">Book Apartament</a></li>
+            <li><a href="post-apartament.html" class="active">Post Apartament</a></li>
+            <li><a href="my-dashboard.html">My History</a></li>
+            <li><a href="../index.html" class="nav-button">Sign Out</a></li>
+            <li class="albania"><a href="../others/e-apartament -sq/e-apartament/others/post-apartament.html"><img src="images/albania-flag.svg" alt="Albania flag"></a></li>
+          </ul>
+          <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+<section class="container">
+    <form action="">
+
+        <div class="row">
+
+    <div class="post-container">
+    <h2 class="title">Post property</h2>
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-circle-info"></i>
+                <h3>Basic Info</h3>
+            </div>
+
+            <div class="info-input-container">
+                <div class="input">
+                    <label for="title">Title <span>*</span></label>
+                    <input type="text" name="title" id="title" placeholder="Enter the property Title" required>
+                </div>
+
+                    <div class="input">
+                        <label for="type">Property type <span>*</span></label>
+                        <select name="type" id="type" required>
+                            <option value="#">Apartament</option>
+                            <option value="#">House</option>
+                            <option value="#">Luxury Retreat</option>
+                            <option value="#">Townhouse</option>
+                        </select>
+                    </div>
+
+                    <div class="input">
+                        <p>Are you listing as part of company?</p>
+
+                        <div class="input-row-radio">
+                            <input type="radio" name="bussines" id="bussines" checked>
+                            <label for="bussines">I am registered bussines</label>
+                        </div>
+
+                        <div class="input-row-radio">
+                            <input type="radio" name="bussines" id="private">
+                            <label for="private">I am private seller</label>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+            </div>
+        </div>
+
+        <!-- location -->
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Location</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input-row">
+                    <div class="input">
+                        <label for="city">City <span>*</span></label>
+                        <input type="text" name="city" id="city" placeholder="Location of property" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="district">District <span>*</span></label>
+                        <input type="text" name="district" id="district" placeholder="Distric of property" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input">
+                        <label for="zip">Zip code <span>*</span></label>
+                        <input type="number" name="zip" id="zip" placeholder="Enter Zip Code" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="street">Street Address <span>*</span></label>
+                        <input type="text" name="street" id="street" placeholder="Enter Street Address" required>
+                    </div>
+                </div>
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+        <!-- property details -->
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-regular fa-pen-to-square" aria-hidden="true"></i>
+                <h3>Property details</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input half-width-input">
+                    <label for="area">Total area, m<sup>2</sup> <span>*</span></label>
+                    <div class="input-suffix">
+                        <input type="number" name="area" id="area" placeholder="Enter Total area in m2" required>
+                    </div>
+                </div>
+                
+                <div class="input half-width-input">
+                    <h3 class="title-for-input-count-rooms">Bedrooms</h3>
+                    <div class="input-count-rooms-row">
+                        <input type="radio" name="bedrooms" id="bedrooms-1" value="-">
+                        <label for="bedrooms-1">-</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-2">
+                        <label for="bedrooms-2">1</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-3">
+                        <label for="bedrooms-3">2</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-4">
+                        <label for="bedrooms-4">3</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-5">
+                        <label for="bedrooms-5">4</label>
+                    
+                        <input type="radio" name="bedrooms" id="bedrooms-6">
+                        <label for="bedrooms-6">5+</label>
+                    </div>
+                    
+
+                </div>
+
+                <!-- bathrooms -->
+
+                <div class="input half-width-input">
+                    <h3 class="title-for-input-count-rooms">Bathrooms</h3>
+                    <div class="input-count-rooms-row">
+                        <input type="radio" name="bathroom" id="bathroom-1" value="-">
+                        <label for="bathroom-1">-</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-2">
+                        <label for="bathroom-2">1</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-3">
+                        <label for="bathroom-3">2</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-4">
+                        <label for="bathroom-4">3</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-5">
+                        <label for="bathroom-5">4</label>
+                    
+                        <input type="radio" name="bathroom" id="bathroom-6">
+                        <label for="bathroom-6">5+</label>
+                    </div>
+                    
+
+                </div>
+
+
+
+                <!-- parking -->
+                <div class="input half-width-input">
+                    <h3 class="title-for-input-count-rooms">Parking Spots</h3>
+                    <div class="input-count-rooms-row">
+                        <input type="radio" name="parking" id="parking-1">
+                        <label for="parking-1">-</label>
+                    
+                        <input type="radio" name="parking" id="parking-2">
+                        <label for="parking-2">1</label>
+                    
+                        <input type="radio" name="parking" id="parking-3">
+                        <label for="parking-3">2</label>
+                    
+                        <input type="radio" name="parking" id="parking-4">
+                        <label for="parking-4">3</label>
+                    
+                        <input type="radio" name="parking" id="parking-5">
+                        <label for="parking-5">4</label>
+                    
+                        <input type="radio" name="parking" id="parking-6">
+                        <label for="parking-6">5+</label>
+                    </div>
+                    
+
+                </div>
+
+
+
+                <!-- amenities -->
+                
+                <div class="checkbox-row">
+                    <div class="checkbox-col">
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="wifi1" checked>
+                            <label for="wifi1">WiFi</label>
+                        </div>  
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="air-conditioning2" checked>
+                            <label for="air-conditioning2">Air Conditioning</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="balcony3">
+                            <label for="balcony3">Balcony</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="garage4" checked>
+                            <label for="garage4">Garage</label>
+                        </div>
+                
+                    </div>
+                
+                    <!-- second -->
+                  
+                
+                    <div class="checkbox-col">
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="gym5">
+                            <label for="gym5">Gym</label>
+                        </div>  
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="parking6" checked>
+                            <label for="parking6">Parking</label>
+                        </div>
+                
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="pool7">
+                            <label for="pool7">Pool</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="tv8" checked>
+                            <label for="tv8">TV</label>
+                        </div>
+                
+                    </div>
+                
+                    <!-- third -->
+                
+                    <div class="checkbox-col">
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="heating9">
+                            <label for="heating9">Heating</label>
+                        </div>  
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="dishwasher10">
+                            <label for="dishwasher10">Dishwasher</label>
+                        </div>
+                
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="kitchen11" checked>
+                            <label for="kitchen11">Kitchen</label>
+                        </div>
+                
+                        <div class="checkbox-content">
+                            <input type="checkbox" id="cameras12" checked>
+                            <label for="cameras12">Security Cameras</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input">
+                    <label for="describe">Description <span>*</span></label>
+                    <textarea name="zip" id="describe" placeholder="Describe your property" required></textarea>
+                </div>
+                
+                  
+
+                 
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+        <!-- price -->
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-solid fa-money-bills" aria-hidden="true"></i>
+                <h3>Price</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input-row price">
+                    <div class="input first-price">
+                        <label for="city">Currency <span>*</span></label>
+                        <select name="currency" id="currency" required>
+                            <option value="#">&euro;</option>
+                            <option value="#">&dollar;</option>
+                            <option value="#">&pound;</option>
+                        </select>
+                    </div>
+
+                    <div class="input second-price">
+                        <label for="price">Price <span>*</span></label>
+                        <input type="number" name="price" id="price" placeholder="Price" required>
+                    </div>
+
+                    <div class="input third-price">
+                        <label for="district">Duration <span>*</span></label>
+                        <select name="duration" id="duration">
+                            <option value="#">per day</option>
+                            <option value="#">per week</option>
+                            <option value="#">per month</option>
+                            <option value="#">per year</option>
+                        </select>
+                    </div>
+                </div>
+                 
+                    <div class="line"></div>
+            </div>
+        </div>
+
+
+
+        <!-- photos -->
+
+        <div class="info-container">
+            <div class="info-text">
+                <i class="fa-regular fa-image" aria-hidden="true"></i>
+                <h3>Photos</h3>
+            </div>
+        
+            <div class="upload-container">
+                <div class="upload-content">
+        
+                    <div class="upload-button">
+                        <input type="file" id="fileinput" multiple accept="image/*"> <!-- Allow multiple image upload -->
+                        <div class="upload-button-container">
+                            <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                            <label for="fileinput">Upload Photos</label>
+                        </div>
+                    </div>
+        
+                    <div class="upload-text">
+                        <p>Upload photo of your property</p>
+                    </div>
+        
+                </div>
+                <div id="thumbnails-container" class="thumbnails-container"></div> 
+            </div>
+        </div>
+
+
+
+        <!-- personal info  -->
+        
+        <div class="info-container ">
+            <div class="info-text personal-info-text">
+                <i class="fa-solid fa-phone-volume" aria-hidden="true"></i>
+                <h3>Personal Info</h3>
+            </div>
+
+            <div class="info-input-container location-input-container">
+
+                <div class="input-row">
+                    <div class="input">
+                        <label for="first-nane">First Name <span>*</span></label>
+                        <input type="text" name="first-name" id="first-name" placeholder="Enter your Name" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="last-nane">Last Name <span>*</span></label>
+                        <input type="text" name="last-name" id="last-name" placeholder="Enter your Last Name" required>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input">
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" name="email" id="email" placeholder="Enter your Email" required>
+                    </div>
+
+                    <div class="input">
+                        <label for="tel">Phone Number <span>*</span></label>
+                        <input type="tel" name="tel" id="tel" placeholder="Enter your Phone Number" required>
+                    </div>
+                </div>
+                
+
+                
+                    <div class="line personal-info"></div>
+            </div>
+        </div>
+
+        <div class="input-submit">
+            <input type="submit" name="send" value="Post your property">
+        </div>
+
+     
+        
+
+
+
+
+            
+      
+
+        
+    </div>
+</form>
+
+<div class="ilustration">
+    <img src="images/list-apartament-ilustration.svg" alt="List apartament ilustration">
+</div>
+
+</div>
+
+    
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer>
+    <div class="wave wave1"></div>
+    <div class="wave wave2"></div>
+    <div class="wave wave3"></div>
+    <div class="wave wave4"></div>
+    <section class="container">
+      <div class="footer-row">
+  
+    <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="book-apartament.html">Book Apartament</a></li>
+            <li><a href="post-apartament.html">Post Apartament</a></li>
+        </ul>
+    </div>
+  
+    <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+            <li><a href="book-apartament.html">Share-Room</a></li>
+            <li><a href="post-apartament.html">Post Apartament</a></li>
+            <li><a href="all-locations.html">The variety of locations</a></li>
+            <li><a href="reviews.html">Reviews and Ratings</a></li>
+            <li><a href="book-apartament.html">Find & Book</a></li>
+        </ul>
+    </div>
+  
+    <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul>
+            <li><a href="#"><i class="fa-solid fa-phone"></i> +383 49-841-813</a></li>
+            <li><a href="#"><i class="fa-solid fa-phone"></i> +383 49-820-970</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i> rijont92@gmail.com</a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i> leardkalludra@gmail.com</a></li>
+            <li><a href="#"><i class="fa-solid fa-location-dot"></i> Vushtrri, Kosovë</a></li>
+        </ul>
+    </div>
+  
+    <div class="footer-col">
+        <h4>Follow Us</h4>
+     <div class="links">
+        <a href="# "><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+     </div>
+    </div>
+  </div>
+  
+  
+  <div class="line-f"></div>
+  
+  <div class="reserved">
+    <p>All rights reserved &copy; <span id="year">2024</span> E-apartament.</p>
+    <p> Developed by <a href="https://www.linkedin.com/in/rijon-tahiri-156169275/" target="_blank">Rijon</a> and <a href="https://www.linkedin.com/in/leard-kalludra-297209312/" target="_blank">Leard</a>.</p>
+  </div>
+    </section>
+  
+    
+  </footer>
+  
+
+
+      <script>
+        const body = document.querySelector("body");
+        const navbar = document.querySelector(".navbar");
+        const menuBtn = document.querySelector(".menu-btn");
+        const cancelBtn = document.querySelector(".cancel-btn");
+        menuBtn.onclick = ()=>{
+          navbar.classList.add("show");
+          menuBtn.classList.add("hide");
+          body.classList.add("disabled");
+        }
+        cancelBtn.onclick = ()=>{
+          body.classList.remove("disabled");
+          navbar.classList.remove("show");
+          menuBtn.classList.remove("hide");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// upload images
+
+
+
+document.getElementById('fileinput').addEventListener('change', handleFileSelect);
+
+function handleFileSelect(event) {
+    const files = event.target.files;
+    const thumbnailsContainer = document.getElementById('thumbnails-container');
+    
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+            const thumbnailContainer = document.createElement('div');
+            thumbnailContainer.classList.add('thumbnail-container');
+            
+            const thumbnail = document.createElement('img');
+            thumbnail.src = event.target.result;
+            thumbnail.classList.add('thumbnail');
+            
+            const removeButton = document.createElement('button');
+            removeButton.innerHTML = 'Remove';
+            removeButton.classList.add('remove-button');
+            removeButton.addEventListener('click', function() {
+                thumbnailContainer.remove();
+            });
+            
+            thumbnailContainer.appendChild(thumbnail);
+            thumbnailContainer.appendChild(removeButton);
+            thumbnailsContainer.appendChild(thumbnailContainer);
+        };
+
+        reader.readAsDataURL(file);
+    }
+}
+
+      </script>
+</body>
+</html>

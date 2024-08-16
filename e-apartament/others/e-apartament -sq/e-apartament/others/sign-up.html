@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/x-icon" href="images/tab-icon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="sign-up.css" />
+  <title>Regjistrohu | E-apartament</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="containerContent">
+      <a class="albania" href="../../../sign-up.html"><img src="images/uk-flag.svg" alt="Uk flag"></a>
+      <h3>Filloni Këtu</h3>
+      <h2>Regjistrohu</h2>
+      <form action="../index.html" id="loginForm">
+
+        <label for="name">Emri <span>*</span></label>
+        <div class="inputRow input-name">
+          <input type="text" id="name" placeholder="Shkruaj emrin tënd"/>
+        </div>
+        <div class="error-msg">
+          <p id="error-message-name"></p>
+        </div>
+
+        <label for="email">Email <span>*</span></label>
+        <div class="inputRow input-email">
+          <input type="email" id="email" placeholder="Shkruani emailin tuaj"/>
+        </div>
+        <div class="error-msg">
+          <p id="error-message-email"></p>
+        </div>
+
+        <label for="password">Fjalëkalimi <span>*</span></label>
+        <div class="inputRow input-password">
+          <input type="password" id="password" placeholder="Shkruani fjalëkalimin tuaj"/>
+          <div class="icon">
+            <i class="fa-solid fa-eye-slash" id="icon"></i>
+          </div>
+        </div>
+        <div class="error-msg">
+          <p id="error-message-password"></p>
+        </div>
+
+        <label for="confirm-password">Konfirmo fjalëkalimin <span>*</span></label>
+        <div class="inputRow input-password2">
+          <input type="password" id="confirm-password" placeholder="Konfirmoni fjalëkalimin tuaj"/>
+          <div class="icon">
+            <i class="fa-solid fa-eye-slash" id="icon2"></i>
+          </div>
+        </div>
+        <div class="error-msg">
+          <p id="error-message-password2"></p>
+        </div>
+
+        <div class="inputFP">
+          <div class="remember">
+            <input type="checkbox" name="remember-me" id="remember-me">
+            <label for="remember-me">Më mbaj të kyçur</label>
+          </div>
+        </div>
+        <button type="submit">Regjistrohu</button>
+      </form>
+
+      <div class="or-option">Ose regjistrohu me</div>
+
+      <div class="logins">
+        <a href="#"><img src="images/search.png" alt="google" /></a>
+        <a href="#"><img src="images/facebook.png" alt="facebook" /></a>
+      </div>
+      <p>Tashmë një anëtar? <a href="../index.html">Kyçuni</a></p>
+    </div>
+    <div class="containerImg">
+      <img src="images/3d-room-sign-up.png" alt="header" />
+    </div>
+  </div>
+
+  <script>
+    const icon = document.getElementById("icon");
+const password = document.getElementById("password");
+const icon2 = document.getElementById("icon2");
+const confirmPassword = document.getElementById("confirm-password");
+const form = document.getElementById("loginForm");
+const nameInput = document.getElementById("name");
+const emailInput = document.getElementById("email");
+const errorInputEmail = document.querySelector(".input-email");
+const errorInputPassword = document.querySelector(".input-password");
+const errorInputName = document.querySelector(".input-name");
+const errorInputPassword2 = document.querySelector(".input-password2");
+const errorMessageEmail = document.getElementById("error-message-email");
+const errorMessagePassword = document.getElementById("error-message-password");
+const errorMessageName = document.getElementById("error-message-name");
+const errorMessagePassword2 = document.getElementById("error-message-password2");
+
+icon.onclick = function() {
+  if (password.type === "password") {
+    password.type = "text";
+    icon.classList.replace('fa-eye-slash', 'fa-eye');
+  } else {
+    password.type = "password";
+    icon.classList.replace('fa-eye', 'fa-eye-slash');
+  }
+};
+
+icon2.onclick = function() {
+  if (confirmPassword.type === "password") {
+    confirmPassword.type = "text";
+    icon2.classList.replace('fa-eye-slash', 'fa-eye');
+  } else {
+    confirmPassword.type = "password";
+    icon2.classList.replace('fa-eye', 'fa-eye-slash');
+  }
+};
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const isNameValid = validateName(nameInput.value);
+  const isEmailValid = validateEmail(emailInput.value);
+  const isPasswordValid = validatePassword();
+  const isConfirmPasswordValid = validateConfirmPassword();
+
+  if (isNameValid && isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+    form.submit();
+  }
+});
+
+function validateName(name) {
+  const re = /^[a-zA-Z]+$/;
+  const isNotBlank = name.trim() !== "";
+  const isValid = re.test(name);
+
+  if (!isNotBlank) {
+    errorMessageName.innerHTML = "Name cannot be blank";
+    errorInputName.classList.add("error-input");
+    errorInputName.classList.remove("sucsses-input");
+    return false;
+  } else if (!isValid) {
+    errorMessageName.innerHTML = "Name can only contain letters (no spaces or special characters)";
+    errorInputName.classList.add("error-input");
+    errorInputName.classList.remove("sucsses-input");
+    return false;
+  } else {
+    errorMessageName.innerHTML = "";
+    errorInputName.classList.add("sucsses-input");
+    errorInputName.classList.remove("error-input");
+    return true;
+  }
+}
+
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (email.trim() === "") {
+    errorMessageEmail.innerHTML = "Email cannot be blank";
+    errorInputEmail.classList.add("error-input");
+    errorInputEmail.classList.remove("sucsses-input");
+    return false;
+  } 
+  
+  const isValid = re.test(email.toLowerCase());
+
+  if (isValid) {
+    errorMessageEmail.innerHTML = "";
+    errorInputEmail.classList.remove("error-input");
+    errorInputEmail.classList.add("sucsses-input");
+  } else {
+    errorMessageEmail.innerHTML = "Invalid email address";
+    errorInputEmail.classList.add("error-input");
+    errorInputEmail.classList.remove("sucsses-input");
+  }
+
+  return isValid;
+}
+
+function validatePassword() {
+  const isValid = password.value.length >= 8 && password.value.length <= 30;
+
+  if (password.value === "") {
+    errorMessagePassword.innerHTML = "Password cannot be blank";
+    errorInputPassword.classList.add("error-input");
+    errorInputPassword.classList.remove("sucsses-input");
+    return false;
+  } else if (isValid) {
+    errorMessagePassword.innerHTML = "";
+    errorInputPassword.classList.add("sucsses-input");
+    errorInputPassword.classList.remove("error-input");
+  } else if (password.value.length < 8) {
+    errorMessagePassword.innerHTML = "The password must have at least 8 characters";
+    errorInputPassword.classList.add("error-input");
+    errorInputPassword.classList.remove("sucsses-input");
+  } else if (password.value.length > 30) {
+    errorMessagePassword.innerHTML = "The password cannot have more than 30 characters";
+    errorInputPassword.classList.add("error-input");
+    errorInputPassword.classList.remove("sucsses-input");
+  }
+
+  return isValid;
+}
+
+function validateConfirmPassword() {
+  const isPasswordNotEmpty = confirmPassword.value.trim() !== "";
+  const isPasswordMatch = password.value === confirmPassword.value;
+
+  if (!isPasswordNotEmpty) {
+    errorMessagePassword2.innerHTML = "Confirm password cannot be blank";
+    errorInputPassword2.classList.add("error-input");
+    errorInputPassword2.classList.remove("sucsses-input");
+    return false;
+  } else if (!isPasswordMatch) {
+    errorMessagePassword2.innerHTML = "Passwords do not match";
+    errorInputPassword2.classList.add("error-input");
+    errorInputPassword2.classList.remove("sucsses-input");
+    return false;
+  } else {
+    errorMessagePassword2.innerHTML = "";
+    errorInputPassword2.classList.add("sucsses-input");
+    errorInputPassword2.classList.remove("error-input");
+    return true;
+  }
+}
+
+  </script>
+  
+</body>
+
+</html>

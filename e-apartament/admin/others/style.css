@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden; 
+}
+
+.icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+}
+  
+.icon i {
+    color: #1a6e44;
+    cursor: pointer;
+    width: 100%;
+}
+
+.error-msg {
+    margin-bottom: 3rem;
+  }
+  
+  .error-msg p{
+    color: red !important;
+    text-align: initial !important;
+    font-size: 14px;
+  }
+  
+  .sucsses-msg {
+    color: green !important;
+    text-align: initial !important;
+    font-size: 14px;
+}
+
+.error-input {
+    border: 2px solid red !important;
+    border-radius: 15px;
+}
+
+  .sucsses-input {
+    border: 2px solid green !important;
+    border-radius: 15px;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+}
+
+.content {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 40px;
+    border-radius: 30px;
+    width: 500px;
+    z-index: 2;
+    position: relative;
+}
+
+.background-clip {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the whole area */
+    z-index: -1;
+}
+
+label:not(:last-child) {
+    color: #43ba7f;
+}
+
+label span {
+    color: red !important;
+}
+
+.input-container.forgot {
+    gap: 30px !important;
+}
+
+.top-content h2 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.3rem;
+    color: black;
+}
+
+.top-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    border: 0.125rem solid #e6e6e6;
+    border-radius: 15px;
+    padding: 15px 20px;
+    
+}
+
+
+.input input {
+    width: 100%;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+}
+
+.card {
+    width: 100%;
+}
+
+.all-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.all-row .row a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.send {
+    width: 100%;
+}
+
+.send input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    border: 0.125rem solid #e6e6e6;
+    background-color: #43ba7f;
+    color: white;
+    transition: .4s;
+}
+
+.send input:hover {
+    background-color: #1a6e44;
+    cursor: pointer;
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .content {
+        padding: 50px 20px;
+    }
+
+    label, .row a {
+        font-size: 14px !important;
+    }
+
+    img {
+        width: 200px;
+    }
+}

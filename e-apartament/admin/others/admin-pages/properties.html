@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="images/x-icon" href="../img/tab-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Property - Admin</title>
+    <link rel="stylesheet" href="properties.css" />
+    <!-- Boxicons CSS -->
+    <link flex href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <nav class="sidebar hoverable">
+      <div class="logo_items flex">
+        <span class="nav_image">
+          <img src="../img/user-image.svg" alt="logo_img" />
+        </span>
+        <span class="logo_name">Rijon Tahiri</span>
+        <i class="bx bx-lock-open-alt" id="lock-icon" title="Unlock Sidebar"></i>
+        <i class="bx bx-x" id="sidebar-close"></i>
+      </div>
+
+      <div class="menu_container">
+        <div class="menu_items">
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Dashboard</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="../admin.html" class="link flex">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="orders.html" class="link flex">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Orders</span>
+              </a>
+            </li>
+
+            <li class="item">
+              <a href="all-agents.html" class="link flex">
+                <i class="fa-solid fa-users"></i>
+                <span>All agents</span>
+              </a>
+            </li>
+
+          </ul>
+
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Clients</span>
+              <span class="line"></span>
+            </div>
+            <li class="item">
+              <a href="messages.html" class="link flex">
+                <i class="fa-solid fa-message"></i>
+                <span>Messages</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="properties.html" class="link flex active">
+                <i class="fa-solid fa-building-user"></i>
+                <span>Property</span>
+              </a>
+            </li>
+       
+          </ul>
+
+          <ul class="menu_item">
+            <div class="menu_title flex">
+              <span class="title">Settings</span>
+              <span class="line"></span>
+            </div>
+            
+            <li class="item">
+              <a href="../../index.html" class="link flex">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Sign out</span>
+              </a>
+            </li>
+            <li class="item">
+              <a href="settings.html" class="link flex">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="sidebar_profile flex">
+          <span class="nav_image">
+            <img src="../img/user-image.svg" alt="logo_img" />
+          </span>
+          <div class="data_text">
+            <span class="name">Rijon Tahiri</span>
+            <span class="email">rijont92@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar -->
+    <nav class="navbar flex">
+      <i class="bx bx-menu" id="sidebar-open"></i>
+      <input type="text" placeholder="Search..." class="search_box" />
+      <span class="nav_image">
+        <img src="../img/user-image.svg" alt="logo_img" />
+      </span>
+    </nav>
+
+    <!-- orders -->
+
+    <div class="header_fixed">
+
+      <div class="book-container">
+
+        <div class="book-nav">
+
+            <div class="book-title">
+                <h2>All Listings</h2>
+            </div>
+
+        </div>
+
+<!-- book product -->
+        <div class="book-row">
+
+            <div class="book-col">
+
+                <div class="book-img">
+                    <img src="../../../others/images/modern-house-vushtrri-bathroom.webp" alt="House in Vushtrri">
+               
+                
+                <div class="circle-like-container">
+                  <input type="checkbox" id="like-checkbox-1">
+                  <label class="circle-like" for="like-checkbox-1">
+                      <i class="fa-solid fa-trash"></i>
+                  </label>
+              </div>
+            </div>
+
+                <div class="book-content">
+
+                    <div class="icon-text">
+                        <div class="icon-content">
+                            <i class="fa-solid fa-bed"></i>
+                            <h4>3 Bedrooms</h4>
+                        </div>
+
+                        <div class="icon-content">
+                            <i class="fa-solid fa-star"></i>
+                            <h4>4.4/5</h4>
+                        </div>
+                    </div>
+
+                    <h3>Modern House</h3>
+                    <p class="location-p">Vushtrri, Kosovo</p>
+
+                    <div class="line"></div>
+
+                    <div class="price-button">
+                        <div class="price">
+                            <p><span>&euro;40</span>/night</p>
+                        </div>
+
+                        
+
+                        <div class="button">
+                          <a href="../../../others/book-apartaments-page/modern-house.html" target="_blank">View Details</a>
+                      </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- second -->
+
+            <div class="book-col">
+
+                <div class="book-img">
+                    <img src="../../../others/images/second-apartament-prishtina.webp" alt="House in Prishtina">
+                
+                    
+                    <div class="circle-like-container">
+                      <input type="checkbox" id="like-checkbox-2">
+                      <label class="circle-like" for="like-checkbox-2">
+                          <i class="fa-solid fa-trash"></i>
+                      </label>
+                  </div>
+                </div>
+
+                <div class="book-content">
+
+                    <div class="icon-text">
+                        <div class="icon-content">
+                            <i class="fa-solid fa-bed"></i>
+                            <h4>4 Bedrooms</h4>
+                        </div>
+
+                        <div class="icon-content">
+                            <i class="fa-solid fa-star"></i>
+                            <h4>4.8/5</h4>
+                        </div>
+                    </div>
+
+                    <h3>Luxury Retreat</h3>
+                    <p class="location-p">Prishtina, Kosovo</p>
+
+                    <div class="line"></div>
+
+                    <div class="price-button">
+                        <div class="price">
+                            <p><span>&euro;130</span>/night</p>
+                        </div>
+                        
+                        <div class="button">
+                          <a href="../../../others/book-apartaments-page/luxury-retreat.html" target="_blank">View Details</a>
+                      </div>
+                        
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- third -->
+
+
+            <div class="book-col">
+
+                <div class="book-img">
+                    <img src="../../../others/images/third-apartament-peja.webp" alt="Apartament in Peja">
+                
+                    
+                    <div class="circle-like-container">
+                      <input type="checkbox" id="like-checkbox-3">
+                      <label class="circle-like" for="like-checkbox-3">
+                          <i class="fa-solid fa-trash"></i>
+                      </label>
+                  </div>
+                </div>
+
+                <div class="book-content">
+
+                    <div class="icon-text">
+                        <div class="icon-content">
+                            <i class="fa-solid fa-bed"></i>
+                            <h4>2 Bedrooms</h4>
+                        </div>
+
+                        <div class="icon-content">
+                            <i class="fa-solid fa-star"></i>
+                            <h4>4.2/5</h4>
+                        </div>
+                    </div>
+
+                    <h3>Park Tower</h3>
+                    <p class="location-p">Peja, Kosovo</p>
+
+                    <div class="line"></div>
+
+                    <div class="price-button">
+                        <div class="price">
+                            <p><span>&euro;70</span>/night</p>
+                        </div>
+
+                        <div class="button">
+                          <a href="../../../others/book-apartaments-page/parker-tower.html" target="_blank">View Details</a>
+                      </div> 
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- second row firt col -->
+
+            <div class="book-col">
+
+                <div class="book-img">
+                    <img src="../../../others/images/second-row-first-apartament-mitrovica.webp" alt="Townhoue in Mitrovica">
+                
+                    
+                    <div class="circle-like-container">
+                      <input type="checkbox" id="like-checkbox-4">
+                      <label class="circle-like" for="like-checkbox-4">
+                          <i class="fa-solid fa-trash"></i>
+                      </label>
+                  </div>
+                </div>
+
+                <div class="book-content">
+
+                    <div class="icon-text">
+                        <div class="icon-content">
+                            <i class="fa-solid fa-bed"></i>
+                            <h4>1 Bedroom</h4>
+                        </div>
+
+                        <div class="icon-content">
+                            <i class="fa-solid fa-star"></i>
+                            <h4>3.9/5</h4>
+                        </div>
+                    </div>
+
+                    <h3>House</h3>
+                    <p class="location-p">Mitrovica, Kosovo</p>
+
+                    <div class="line"></div>
+
+                    <div class="price-button">
+                        <div class="price">
+                            <p><span>&euro;30</span>/night</p>
+                        </div>
+
+                        <div class="button">
+                            <a href="../../../others/book-apartaments-page/mitrovica-apartament.html" target="_blank">View Details</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- second row second col -->
+
+
+
+            <div class="book-col">
+
+                <div class="book-img">
+                    <img src="../../../others/images/second-row-second-apartament-ferizaj.webp" alt="Apartament in Ferizaj">
+                
+                    
+                    <div class="circle-like-container">
+                      <input type="checkbox" id="like-checkbox-7">
+                      <label class="circle-like" for="like-checkbox-7">
+                          <i class="fa-solid fa-trash"></i>
+                      </label>
+                  </div>
+                </div>
+
+                <div class="book-content">
+
+                    <div class="icon-text">
+                        <div class="icon-content">
+                            <i class="fa-solid fa-bed"></i>
+                            <h4>3 Bedrooms</h4>
+                        </div>
+
+                        <div class="icon-content">
+                            <i class="fa-solid fa-star"></i>
+                            <h4>4.4/5</h4>
+                        </div>
+                    </div>
+
+                    <h3>Apartament</h3>
+                    <p class="location-p">Ferizaj, Kosovo</p>
+
+                    <div class="line"></div>
+
+                    <div class="price-button">
+                        <div class="price">
+                            <p><span>&euro;80</span>/night</p>
+                        </div>
+
+                        <div class="button">
+                            <a href="../../../others/book-apartaments-page/apartament-ferizaj.html" target="_blank">View Details</a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- second row third col -->
+
+    
+            <div class="book-col">
+
+                <div class="book-img">
+                    <img src="../../../others/images/second-row-third-apartament-gjilan.webp" alt="Apartament in Gjilan">
+                
+                    
+                    <div class="circle-like-container">
+                      <input type="checkbox" id="like-checkbox-8">
+                      <label class="circle-like" for="like-checkbox-8">
+                          <i class="fa-solid fa-trash"></i>
+                      </label>
+                  </div>
+                </div>
+
+                <div class="book-content">
+
+                    <div class="icon-text">
+                        <div class="icon-content">
+                            <i class="fa-solid fa-bed"></i>
+                            <h4>2 Bedrooms</h4>
+                        </div>
+
+                        <div class="icon-content">
+                            <i class="fa-solid fa-star"></i>
+                            <h4>4.3/5</h4>
+                        </div>
+                    </div>
+
+                    <h3>Apartament</h3>
+                    <p class="location-p">Gjilan, Kosovo</p>
+
+                    <div class="line"></div>
+
+                    <div class="price-button">
+                        <div class="price">
+                            <p><span>&euro;75</span>/night</p>
+                        </div>
+
+                        <div class="button">
+                          <a href="../../../others/book-apartaments-page/apartament-gjilan.html" target="_blank">View Details</a>
+                      </div>
+
+
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="book-col">
+
+              <div class="book-img">
+                  <img src="../../../others/images/prishtin-second.webp" alt="Apartament in Prishtina">
+
+                  <div class="circle-like-container">
+                    <input type="checkbox" id="like-checkbox-42">
+                    <label class="circle-like" for="like-checkbox-42">
+                        <i class="fa-solid fa-trash"></i>
+                    </label>
+                </div>
+
+              </div>
+
+              <div class="book-content">
+
+                  <div class="icon-text">
+                      <div class="icon-content">
+                          <i class="fa-solid fa-bed"></i>
+                          <h4>3 Bedrooms</h4>
+                      </div>
+
+                      <div class="icon-content">
+                          <i class="fa-solid fa-star"></i>
+                          <h4>4.7/5</h4>
+                      </div>
+                  </div>
+
+                  <h3>Apartament</h3>
+                  <p class="location-p">Prishtina, Kosovo</p>
+
+                  <div class="line"></div>
+
+                  <div class="price-button">
+                      <div class="price">
+                          <p><span>&euro;80</span>/night</p>
+                      </div>
+
+                      <div class="button">
+                          <a href="../../../others/book-apartaments-page/second-apartament-prishtina.html" target="_blank">View Details</a>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+
+
+
+          <div class="book-col">
+
+              <div class="book-img">
+                  <img src="../../../others/images/vushtrria-second.webp" alt="Apartament in Gjilan">
+
+                  <div class="circle-like-container">
+                    <input type="checkbox" id="like-checkbox-32">
+                    <label class="circle-like" for="like-checkbox-32">
+                        <i class="fa-solid fa-trash"></i>
+                    </label>
+                </div>
+
+              </div>
+
+              <div class="book-content">
+
+                  <div class="icon-text">
+                      <div class="icon-content">
+                          <i class="fa-solid fa-bed"></i>
+                          <h4>4 Bedrooms</h4>
+                      </div>
+
+                      <div class="icon-content">
+                          <i class="fa-solid fa-star"></i>
+                          <h4>4.9/5</h4>
+                      </div>
+                  </div>
+
+                  <h3>Big House</h3>
+                  <p class="location-p">Vushtrri, Kosovo</p>
+
+                  <div class="line"></div>
+
+                  <div class="price-button">
+                      <div class="price">
+                          <p><span>&euro;100</span>/night</p>
+                      </div>
+
+                      <div class="button">
+                          <a href="../../../others/book-apartaments-page/second-apartament-vushtrri.html" target="_blank">View Details</a>
+                      </div>
+
+                  </div>
+              </div>
+
+          </div>
+
+
+        </div>
+
+    </div>
+    
+    </div>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <script src="../main.js"></script>
+  </body>
+</html>
