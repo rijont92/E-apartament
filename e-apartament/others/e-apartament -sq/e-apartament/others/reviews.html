@@ -264,22 +264,29 @@
 
 
         <div class="post-reviews-bottom">
-            <form action="">
-                <input type="text" name="Name" placeholder="Shkruaj emrin tënd " required>
-                <textarea placeholder="Përshkruaj përvojen tuaj..." minlength="20" required></textarea>
+            <form action="success.html" id="loginForm">
+
+                <div class="inputRow" id="email-input">
+                    <input type="text" name="Name" placeholder="Shkruaj emrin tënd" id="email">
+                </div>
+
+                <div class="error-msg">
+                    <p id="error-message-email"></p>
+                  </div>
+
+                <div class="inputRow" id="password-input">
+                    <textarea placeholder="Përshkruaj përvojen tuaj..." id="message"></textarea>
+                </div>
+
+                <div class="error-msg">
+                    <p id="error-message-password"></p>
+                  </div>
                 <input type="submit" class="send" value="Dërgo">
             </form>
         </div>
 
     </div>
 </section>
-
-
-
-
-
-
-
 
 <footer>
     <div class="wave wave1"></div>
@@ -357,6 +364,84 @@
           navbar.classList.remove("show");
           menuBtn.classList.remove("hide");
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        const form = document.getElementById("loginForm");
+const nameInput = document.getElementById("email"); // Assuming this input is for the name
+const messageInput = document.querySelector("textarea");
+const errorInputName = document.getElementById("email-input");
+const errorInputMessage = document.getElementById("password-input");
+const errorMessageName = document.getElementById("error-message-email");
+const errorMessageMessage = document.getElementById("error-message-password");
+
+form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const isNameValid = validateName(nameInput.value);
+    const isMessageValid = validateMessage(messageInput.value);
+
+    if (isNameValid && isMessageValid) {
+        form.submit();
+    }
+});
+
+function validateName(name) {
+    const re = /^[A-Za-z\s]+$/;
+
+    if (name === "") {
+        errorMessageName.innerHTML = "Name cannot be blank";
+        errorInputName.classList.add("error-input");
+        errorInputName.classList.remove("sucsses-input");
+        return false;
+    } 
+    
+    const isValid = re.test(name);
+
+    if (isValid) {
+        errorInputName.classList.remove("error-input");
+        errorInputName.classList.add("sucsses-input");
+        errorMessageName.innerHTML = "";
+    } else {
+        errorMessageName.innerHTML = "Name can only contain letters and spaces";
+        errorInputName.classList.add("error-input");
+        errorInputName.classList.remove("sucsses-input");
+    }
+
+    return isValid;
+}
+
+function validateMessage(message) {
+    const isValid = message.length >= 10;
+
+    if (message === "") {
+        errorMessageMessage.innerHTML = "Message cannot be blank";
+        errorInputMessage.classList.add("error-input");
+        errorInputMessage.classList.remove("sucsses-input");
+        return false;
+    } else if (isValid) {
+        errorInputMessage.classList.add("sucsses-input");
+        errorInputMessage.classList.remove("error-input");
+        errorMessageMessage.innerHTML = "";
+    } else {
+        errorMessageMessage.innerHTML = "Message must have at least 10 characters";
+        errorInputMessage.classList.add("error-input");
+        errorInputMessage.classList.remove("sucsses-input");
+    }
+
+    return isValid;
+}
+
       </script>
 </body>
 </html>
