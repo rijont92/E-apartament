@@ -51,7 +51,7 @@
         <div class="book-row">
 
         
-          <div class="book-col">
+          <div class="book-col" data-id="unique-id-12">
 
               <div class="book-img">
                   <img src="images/second-row-third-apartament-gjilan.webp" alt="Apartament in Gjilan">
@@ -104,7 +104,7 @@
           </div>
 
 
-          <div class="book-col">
+          <div class="book-col" data-id="unique-id-2">
 
               <div class="book-img">
                   <img src="images/prishtin-second.webp" alt="Apartament in Gjilan">
@@ -156,7 +156,7 @@
               </div>
           </div>
 
-          <div class="book-col">
+          <div class="book-col" data-id="unique-id-3">
 
               <div class="book-img">
                   <img src="images/vushtrria-second.webp" alt="Apartament in Gjilan">
@@ -192,7 +192,7 @@
                       </div>
                   </div>
 
-                  <h3>Big House</h3>
+                  <h3>Shtëpi e madhe</h3>
                   <p class="location-p">Vushtrri, Kosovo</p>
 
                   <div class="line"></div>
@@ -231,7 +231,7 @@
 
         <div class="book-row second-row">
 
-            <div class="book-col">
+            <div class="book-col" data-id="unique-id-11">
 
                 <div class="book-img">
                     <img src="images/first-apartament-vushtrri.jpeg" alt="House in Vushtrri">
@@ -259,7 +259,7 @@
                         </div>
                     </div>
 
-                    <h3>Modern House</h3>
+                    <h3>Shtëpi moderne</h3>
                     <p class="location-p">Vushtrri, Kosovo</p>
 
                     <div class="line"></div>
@@ -280,7 +280,7 @@
 
             <!-- second -->
 
-            <div class="book-col">
+            <div class="book-col" data-id="unique-id-12">
 
                 <div class="book-img">
                     <img src="images/second-apartament-prishtina.webp" alt="House in Prishtina">
@@ -348,7 +348,7 @@
         
             <div class="book-row second-row">
 
-            <div class="book-col">
+            <div class="book-col" data-id="unique-id-4">
 
                 <div class="book-img">
                     <img src="images/third-apartament-peja.webp" alt="Apartament in Peja">
@@ -401,7 +401,7 @@
         
             <!-- second -->
         
-            <div class="book-col">
+            <div class="book-col" data-id="unique-id-7">
 
                 <div class="book-img">
                     <img src="images/second-row-first-apartament-mitrovica.webp" alt="Townhoue in Mitrovica">
@@ -435,7 +435,7 @@
                         </div>
                     </div>
 
-                    <h3>House</h3>
+                    <h3>Shtëpi</h3>
                     <p class="location-p">Mitrovica, Kosovo</p>
 
                     <div class="line"></div>
@@ -534,21 +534,156 @@
         </section>
       </footer> 
 
-<script>
-        const body = document.querySelector("body");
-        const navbar = document.querySelector(".navbar");
-        const menuBtn = document.querySelector(".menu-btn");
-        const cancelBtn = document.querySelector(".cancel-btn");
-        menuBtn.onclick = ()=>{
-          navbar.classList.add("show");
-          menuBtn.classList.add("hide");
-          body.classList.add("disabled");
+      <div id="confirmation-popup" class="confirmation-popup">
+        <div class="popup-content">
+            <p>Are you sure you want to delete this item?</p>
+            <div class="flx-button">
+                <button id="confirm-yes">Yes</button>
+                <button id="confirm-no">No</button>
+    
+            </div>
+        </div>
+    </div>
+    
+    <div id="overlay"></div>
+
+      <script>
+        // Select elements
+    const body = document.querySelector("body");
+    const navbar = document.querySelector(".navbar");
+    const menuBtn = document.querySelector(".menu-btn");
+    const cancelBtn = document.querySelector(".cancel-btn");
+    const trashIcons = document.querySelectorAll('.fa-trash');
+    const heartIcons = document.querySelectorAll('.fa-heart');
+    const popup = document.getElementById('confirmation-popup');
+    const overlay = document.getElementById('overlay');
+    const confirmYes = document.getElementById('confirm-yes');
+    const confirmNo = document.getElementById('confirm-no');
+    
+    // Variables to keep track of current item and icon
+    let currentItem;
+    let currentIcon;
+    
+    // Toggle navbar and overlay
+    menuBtn.onclick = () => {
+        navbar.classList.add("show");
+        menuBtn.classList.add("hide");
+        body.classList.add("disabled");
+        overlay.style.display = 'block'; // Show overlay
+    };
+    
+    cancelBtn.onclick = () => {
+        body.classList.remove("disabled");
+        navbar.classList.remove("show");
+        menuBtn.classList.remove("hide");
+        overlay.style.display = 'none'; // Hide overlay
+    };
+    
+    // Show popup and handle icon color change for trash icons
+    trashIcons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            currentItem = e.target.closest('.book-col'); // Get the closest .book-col
+            currentIcon = e.target; // Get the clicked icon
+            currentIcon.classList.add('red'); // Change icon color to red
+            popup.style.display = 'block'; // Show popup
+            overlay.style.display = 'block'; // Show overlay
+            body.classList.add('ds'); // Add class to body
+        });
+    });
+    
+    // Show popup and handle icon color change for heart icons
+    heartIcons.forEach(icon => {
+        const checkbox = document.getElementById(icon.parentElement.htmlFor);
+        checkbox.addEventListener('change', (e) => {
+            if (!e.target.checked) {
+                currentItem = e.target.closest('.book-col'); // Get the closest .book-col
+                currentIcon = icon; // Get the clicked icon
+                currentIcon.classList.add('red'); // Change icon color to red
+                popup.style.display = 'block'; // Show popup
+                overlay.style.display = 'block'; // Show overlay
+                body.classList.add('ds'); // Add class to body
+            }
+        });
+    });
+    
+    // Confirm deletion
+    confirmYes.addEventListener('click', () => {
+        if (currentItem) {
+            // Get the item data to identify it later
+            const itemId = currentItem.dataset.id;
+    
+            // Remove the item from the page
+            currentItem.remove();
+    
+            // Update localStorage
+            let deletedItems = JSON.parse(localStorage.getItem('deletedItems')) || [];
+            if (!deletedItems.includes(itemId)) {
+                deletedItems.push(itemId);
+                localStorage.setItem('deletedItems', JSON.stringify(deletedItems));
+            }
         }
-        cancelBtn.onclick = ()=>{
-          body.classList.remove("disabled");
-          navbar.classList.remove("show");
-          menuBtn.classList.remove("hide");
+        if (currentIcon) {
+            currentIcon.classList.remove('red'); // Revert icon color
         }
-</script>
+        popup.style.display = 'none'; // Hide popup
+        overlay.style.display = 'none'; // Hide overlay
+        body.classList.remove('ds'); // Remove class from body
+    });
+    
+    // Cancel deletion
+    confirmNo.addEventListener('click', () => {
+        if (currentIcon) {
+            currentIcon.classList.remove('red'); // Revert icon color
+        }
+        popup.style.display = 'none'; // Hide popup
+        overlay.style.display = 'none'; // Hide overlay
+        body.classList.remove('ds'); // Remove class from body
+    });
+    
+    // Hide popup when clicking outside
+    window.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+            if (currentIcon) {
+                currentIcon.classList.remove('red'); // Revert icon color
+            }
+            popup.style.display = 'none'; // Hide popup
+            overlay.style.display = 'none'; // Hide overlay
+            body.classList.remove('ds'); // Remove class from body
+        }
+    });
+    
+    // Function to load and filter out deleted items
+    function loadDeletedItems() {
+        const deletedItems = JSON.parse(localStorage.getItem('deletedItems')) || [];
+        deletedItems.forEach(itemId => {
+            const item = document.querySelector(`.book-col[data-id="${itemId}"]`);
+            if (item) {
+                item.remove();
+            }
+        });
+    }
+    
+    // Function to save the remaining items
+    function saveItems() {
+        const items = document.querySelectorAll('.book-col');
+        const itemData = Array.from(items).map(item => {
+            return {
+                id: item.dataset.id,
+                imgSrc: item.querySelector('.book-img img').src,
+                title: item.querySelector('.book-content h3').textContent,
+                location: item.querySelector('.location-p').textContent,
+                price: item.querySelector('.price p').textContent
+            };
+        });
+        localStorage.setItem('itemData', JSON.stringify(itemData));
+    }
+    
+    // Load deleted items and save items on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        loadDeletedItems();
+        saveItems();
+    });
+    
+    </script>
 </body>
 </html>
