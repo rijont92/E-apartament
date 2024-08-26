@@ -203,11 +203,12 @@
                     <div class="contact-content">
             
                         <div class="contact-form">
-                            <form action="../pay-page/pay.html">
+                            <form action="../pay-page/pay.html" id="form">
 
                                 <div class="input">
                                     <label for="name">Name</label>
-                                    <input type="text" placeholder="Enter Your Name" required id="name">
+                                    <input type="text" placeholder="Enter Your Name" id="name">
+                                    <p class="error"></p>
                                 </div>
 
 
@@ -215,27 +216,32 @@
                             <div class="input">
                                 <label for="surname">Surname</label>
                                 <input type="text" placeholder="Enter Your Surname" id="surname">
+                                <p class="error"></p>
                             </div>
 
 
                             <div class="input">
                                 <label for="email">Email</label>
-                                <input type="email" placeholder="Enter Your Email" required id="email">
+                                <input type="email" placeholder="Enter Your Email" id="email">
+                                <p class="error"></p>
                             </div>
                     
                             <div class="input">
                                 <label for="tel">Phone number</label>
-                                <input type="tel" placeholder="Enter Your Phone Number" required id="tel">
+                                <input type="tel" placeholder="Enter Your Phone Number" id="tel">
+                                <p class="error"></p>
                             </div>
 
                             <div class="input">
                                 <label for="check-in">Check-in</label>
-                                <input type="date" required id="check-in">
+                                <input type="date" id="check-in">
+                                <p class="error"></p>
                             </div>
 
                             <div class="input">
                                 <label for="check-out">Check-out</label>
-                                <input type="date" required id="check-out">
+                                <input type="date" id="check-out">
+                                <p class="error"></p>
                             </div>
 
                             
@@ -407,5 +413,7 @@
         });
     });
       </script>
+
+      <script src="validation.js"></script>
 </body>
 </html>

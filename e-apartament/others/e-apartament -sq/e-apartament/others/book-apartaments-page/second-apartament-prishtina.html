@@ -207,11 +207,12 @@
                     <div class="contact-content">
             
                         <div class="contact-form">
-                            <form action="../pay-page/pay.html">
+                            <form action="../pay-page/pay.html" id="form">
 
                                 <div class="input">
                                     <label for="name">Emri</label>
-                                    <input type="text" placeholder="Shkruaj emrin tënd" required id="name">
+                                    <input type="text" placeholder="Shkruaj emrin tënd"  id="name">
+                                    <p class="error"></p>    
                                 </div>
 
 
@@ -219,27 +220,32 @@
                             <div class="input">
                                 <label for="surname">Mbiemri</label>
                                 <input type="text" placeholder="Shkruaj mbiemrin tënd" id="surname">
+                                <p class="error"></p>    
                             </div>
 
 
                             <div class="input">
                                 <label for="email">Email</label>
-                                <input type="email" placeholder="Shkruaj emailin tënd" required id="email">
+                                <input type="email" placeholder="Shkruaj emailin tënd"  id="email">
+                                <p class="error"></p>
                             </div>
-                    
+
                             <div class="input">
                                 <label for="tel">Numri i telefonit</label>
-                                <input type="tel" placeholder="Shkruaj numrin e telefonit" required id="tel">
+                                <input type="tel" placeholder="Shkruaj numrin e telefonit"  id="tel">
+                                <p class="error"></p>
                             </div>
 
                             <div class="input">
                                 <label for="check-in">Prej</label>
-                                <input type="date" required id="check-in">
+                                <input type="date"  id="check-in">
+                                <p class="error"></p>    
                             </div>
 
                             <div class="input">
                                 <label for="check-out">Deri më</label>
-                                <input type="date" required id="check-out">
+                                <input type="date"  id="check-out">
+                                <p class="error"></p>    
                             </div>
 
                             
@@ -372,5 +378,6 @@
         });
     });
       </script>
+      <script src="../../../../book-apartaments-page/validation.js"></script>
 </body>
 </html>

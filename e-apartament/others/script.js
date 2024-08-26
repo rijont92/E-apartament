@@ -84,3 +84,25 @@ function validatePassword() {
 
   return isValid;
 }
+
+
+
+
+
+
+
+
+const setError= (element,message) => {
+  const inputContainer = element.parentElement;
+  const errorMsg = inputContainer.querySelector(".error");
+
+  errorMsg.innerText = message;
+} 
+
+
+const setSuccess = element => {
+  const inputContainer = element.parentElement;
+  const errorMsg = inputContainer.querySelector(".error");
+
+  errorMsg.innerText = "";
+}
