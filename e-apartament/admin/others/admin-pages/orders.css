@@ -332,29 +332,34 @@ td span {
   border-radius: 10px;
 }
 
-.remove a{
+.remove button{
  text-decoration: none;
  color: white;
   background-color: #43ba7f;
   padding: 17px;
   border-radius: 10px;
   transition: .4s;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid  #43ba7f;
 }
 
-.remove a:hover {
+.remove button:hover {
   background-color: #1a6e44;
 }
 
-.reset a{
+.reset button{
   text-decoration: none;
  color: white;
   background-color: rgb(236, 12, 12);
   padding: 17px 25px;
   border-radius: 10px;
   transition: .4s;
+  border: 1px solid  rgb(236, 12, 12);
+  cursor: pointer;
 }
 
-.reset a:hover {
+.reset button:hover {
   background-color:rgb(199, 20, 20);
 }
 /* star of top boxes */

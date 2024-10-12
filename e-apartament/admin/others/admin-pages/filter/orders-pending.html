@@ -142,7 +142,7 @@
         </div>
       
         <div class="statisctics-content">
-          <h4>400</h4>
+          <h4>412</h4>
           <p>Total Properties</p>
         </div>
       </div>
@@ -153,7 +153,7 @@
       <div class="statisctics-col full">
       
         <div class="statisctics-content">
-          <h4>400</h4>
+          <h4>4</h4>
           <p>Agents</p>
         </div>
       
@@ -167,7 +167,7 @@
         <div class="line-statisctics"></div>
       
         <div class="statisctics-content">
-          <h4>4.3</h4>
+          <h4>4.58</h4>
           <p>Rating</p>
         </div>
       </div>
@@ -192,11 +192,11 @@
       </div>
 
         <div class="remove">
-          <a href="orders-remove-all.html"><i class="fa-solid fa-trash"></i> Remove All</a>
+          <button href="#" onclick="removeRow()"><i class="fa-solid fa-trash"></i> Remove</button>
         </div>
         
         <div class="reset">
-          <a href="../orders.html"><i class="fas fa-redo-alt"></i></a>
+          <button onclick="resetRow()"><i class="fas fa-redo-alt"></i></button>
         </div>
       </div>
 
@@ -279,20 +279,8 @@
 
 
 
-<script>
-const selectAllCheckbox = document.getElementById('selectAll');
 
-
-    const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
-
-
-    selectAllCheckbox.addEventListener('change', function() {
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = this.checked;
-      });
-    });
-</script>
-
+    <script src="../orders.js"></script>
    <script src="../../main.js"></script>
   </body>
 </html>

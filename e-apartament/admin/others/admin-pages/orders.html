@@ -199,11 +199,11 @@
       </div>
 
         <div class="remove">
-          <a href="filter/orders-remove-all.html"><i class="fa-solid fa-trash"></i> Remove All</a>
+          <button href="#" onclick="removeRow()"><i class="fa-solid fa-trash"></i> Remove</button>
         </div>
         
         <div class="reset">
-          <a href="orders.html"><i class="fas fa-redo-alt"></i></a>
+          <button onclick="resetRow()"><i class="fas fa-redo-alt"></i></button>
         </div>
       </div>
 
@@ -335,20 +335,9 @@
 
 
 
-<script>
-const selectAllCheckbox = document.getElementById('selectAll');
 
-
-    const checkboxes = document.querySelectorAll('tbody input[type="checkbox"]');
-
-
-    selectAllCheckbox.addEventListener('change', function() {
-      checkboxes.forEach(checkbox => {
-        checkbox.checked = this.checked;
-      });
-    });
-</script>
 
    <script src="../main.js"></script>
+   <script src="orders.js"></script>
   </body>
 </html>
